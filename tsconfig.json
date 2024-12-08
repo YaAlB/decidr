@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",                          // Use the latest ECMAScript version.
+    "lib": ["DOM", "DOM.Iterable", "ES2020"],    // Include browser and ES features.
+    "allowJs": true,                             // Allow JavaScript files.
+    "skipLibCheck": true,                        // Skip type checks for library files.
+    "esModuleInterop": true,                     // Import/export ES6 modules.
+    "allowSyntheticDefaultImports": true,        // Import modules without needing a default export.
+    "strict": true,                              // Enable all strict type-checking options.
+    "forceConsistentCasingInFileNames": true,    // Ensure consistent file name casing.
+    "module": "ESNext",                          // Use the latest module resolution.
+    "moduleResolution": "Node",                 // Resolve modules using Node.js style.
+    "resolveJsonModule": true,                   // Allow importing JSON files.
+    "isolatedModules": true,                     // Ensure each file is treated as a separate module.
+    "noEmit": true,                              // Do not emit compiled files.
+    "jsx": "react-jsx"                           // Use the modern JSX runtime.
+  },
+  "include": ["src"],                            // Include files in the "src" folder.
+  "exclude": ["node_modules", "build"]           // Exclude unnecessary files.
+}
