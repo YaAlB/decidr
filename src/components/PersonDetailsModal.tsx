@@ -40,6 +40,16 @@ const PersonDetailsModal: React.FC<PersonDetailsModalProps> = ({ open, person, o
             <Typography variant="body1" gutterBottom>
               <strong>Affiliations:</strong> {person.affiliations.map((aff) => aff.name).join(', ')}
             </Typography>
+            {person.species && (
+              <Typography variant="body1" gutterBottom>
+                <strong>Species:</strong> {person.species}
+              </Typography>
+            )}
+            {person.gender && (
+              <Typography variant="body1" gutterBottom>
+                <strong>Gender:</strong> {person.gender}
+              </Typography>
+            )}
             {person.weapon && (
               <Typography variant="body1" gutterBottom>
                 <strong>Weapon:</strong> {person.weapon}
