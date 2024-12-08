@@ -9,6 +9,7 @@ import {
   Paper,
 } from '@mui/material';
 import { Person } from '../types/Person';
+import PersonDetailsModal from './PersonDetailsModal'; // Import the modal component
 
 interface TableProps {
   people: Person[];
@@ -21,7 +22,7 @@ const DataTable: React.FC<TableProps> = ({ people, onSort, sortBy, order }) => {
   const [selectedPerson, setSelectedPerson] = useState<Person | null>(null);
 
   const handleRowClick = (person: Person) => {
-    setSelectedPerson(person);
+    setSelectedPerson(person); // Set the selected person to display in the modal
   };
 
   const handleSort = (column: string) => {
@@ -30,7 +31,7 @@ const DataTable: React.FC<TableProps> = ({ people, onSort, sortBy, order }) => {
   };
 
   const handleCloseModal = () => {
-    setSelectedPerson(null);
+    setSelectedPerson(null); // Clear the selected person when modal is closed
   };
 
   return (
@@ -84,6 +85,15 @@ const DataTable: React.FC<TableProps> = ({ people, onSort, sortBy, order }) => {
           </TableBody>
         </Table>
       </TableContainer>
+
+      {/* Modal to display person details */}
+      {selectedPerson && (
+        <PersonDetailsModal
+          open={!!selectedPerson}
+          person={selectedPerson}
+          onClose={handleCloseModal}
+        />
+      )}
     </>
   );
 };
