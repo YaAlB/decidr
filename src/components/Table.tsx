@@ -52,6 +52,12 @@ const DataTable: React.FC<TableProps> = ({ people, onSort, sortBy, order }) => {
               <TableCell onClick={() => handleSort('affiliations')} sx={{ cursor: 'pointer' }}>
                 Affiliations {sortBy === 'affiliations' && (order === 'asc' ? '↑' : '↓')}
               </TableCell>
+              <TableCell onClick={() => handleSort('species')} sx={{ cursor: 'pointer' }}>
+                Species {sortBy === 'species' && (order === 'asc' ? '↑' : '↓')}
+              </TableCell>
+              <TableCell onClick={() => handleSort('gender')} sx={{ cursor: 'pointer' }}>
+                Gender {sortBy === 'gender' && (order === 'asc' ? '↑' : '↓')}
+              </TableCell>
               <TableCell onClick={() => handleSort('weapon')} sx={{ cursor: 'pointer' }}>
                 Weapon {sortBy === 'weapon' && (order === 'asc' ? '↑' : '↓')}
               </TableCell>
@@ -78,6 +84,8 @@ const DataTable: React.FC<TableProps> = ({ people, onSort, sortBy, order }) => {
                 <TableCell>
                   {person.affiliations.map((affiliation) => affiliation.name).join(', ')}
                 </TableCell>
+                <TableCell>{person.species || '-'}</TableCell>
+                <TableCell>{person.gender || '-'}</TableCell> 
                 <TableCell>{person.weapon || '-'}</TableCell>
                 <TableCell>{person.vehicle || '-'}</TableCell>
               </TableRow>
