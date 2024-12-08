@@ -1,46 +1,85 @@
-# Getting Started with Create React App
+---
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### **Frontend**
 
-## Available Scripts
+#### **1. Prerequisites**
+- **Node.js** (v14 or later)
 
-In the project directory, you can run:
+#### **2. Setup**
+1. Clone the frontend repository:
+   ```bash
+   git clone https://github.com/YaAlB/decidr.git
+   cd decidr
+   ```
 
-### `npm start`
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+3. Start the React app:
+   ```bash
+   npm start
+   ```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+4. Open the app in your browser at:
+   ```
+   http://localhost:3000
+   ```
 
-### `npm test`
+#### **3. Features**
+- **File Upload**:
+  - Drag and drop a CSV file or use the upload button.
+- **Search**:
+  - Filter results dynamically using the search bar.
+- **Sorting**:
+  - Click on table column headers to sort data by various fields.
+- **Pagination**:
+  - Navigate through pages to view more results.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## **File Structure**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### **Frontend**
+```
+frontend/
+├── src/
+│   ├── components/        # Reusable UI components (Table, Modal, Pagination)
+│   ├── redux/             # Redux store and slices
+│   ├── services/          # API integration (upload, fetchPeople)
+│   ├── types/             # Shared TypeScript interfaces
+│   ├── App.tsx            # Main app component
+│   ├── index.tsx          # React entry point
+├── public/
+│   ├── index.html         # HTML template
+├── package.json
+├── tsconfig.json          # TypeScript configuration
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## **Testing**
 
-### `npm run eject`
+### **Backend**
+1. **Upload the Provided CSV**:
+   - Use Postman, `curl`, or the frontend to upload `StarWarsCharacters.csv`.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+2. **Verify Data**:
+   - Use MongoDB tools or the `GET /api/people` endpoint to check if data is stored and retrieved correctly.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### **Frontend**
+1. **Upload a File**:
+   - Drag and drop the provided CSV or click the upload button.
+2. **Search and Sort**:
+   - Test the search functionality by entering names or affiliations.
+   - Click on table headers to sort by different fields.
+3. **Pagination**:
+   - Navigate between pages using the pagination controls.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+---
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+## **Notes**
+- Ensure the backend (`http://localhost:8000`) and frontend (`http://localhost:3000`) are running simultaneously for full functionality.
+- Use the provided CSV file (`StarWarsCharacters.csv`) for testing.
+- For any issues or questions, feel free to reach out.
